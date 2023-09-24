@@ -1,4 +1,7 @@
-export enum Apis {
+/**
+ * Enum representing the available Correios APIs.
+ */
+export enum CorreiosAPIs {
     //https://api.correios.com.br/token/v3/api-docs
     Token = 5,
     //https://api.correios.com.br/preco/v3/api-docs

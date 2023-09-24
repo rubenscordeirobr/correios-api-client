@@ -1,7 +1,7 @@
-import { Apis } from "./apis";
+import { CorreiosAPIs } from "./correios-apis";
 
 export interface Contrato {
-    api: Apis[]
+    api: CorreiosAPIs[]
     dr: number,
     numero: string,
 }

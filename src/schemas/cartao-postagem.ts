@@ -1,7 +1,7 @@
-import { Apis } from "./apis";
+import { CorreiosAPIs } from "./correios-apis";
 
 export interface CartaoPostagem {
-    api: Apis[]
+    api: CorreiosAPIs[]
     contrato: string,
     dr: number,
     numero: string,
