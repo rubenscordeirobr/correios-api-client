@@ -20,8 +20,9 @@ if (!global.FakeConfiguration) {
 }
 
 if(!global.Configuration){
-    const json = fs.readFileSync("./tests/configuration.json", "utf8");
+    const json = fs.readFileSync("./configuration.json", "utf8");
     const realConfiguration = JSON.parse(json) as Configuration;
+    console.log("Configuration", realConfiguration);
     global.Configuration = realConfiguration;
 }
  

@@ -25,6 +25,17 @@ jobs:
               uses: actions/setup-node@v3
               with:
                  node-version: ${{ matrix.node-version }}
+
+            - name: Create configuration.json for tests
+              run: |
+                  echo '{
+                            "ambiente": "PRODUCAO", 
+                            "idCorreios" : "${{ secrets.ID_CORREIOS }}", 
+                            "codigoAcesso" :   "${{ secrets.CODIGO_ACESSO }}",
+                            "contrato" : "${{ secrets.NUMERO_CONTRATO }}",
+                            "cartaoPostagem": "${{ secrets.CARTAO_POSTAGEM }}"
+                        }' > ./configuration.json
+                        
             - name: npm install, build, and test
               run: |
                   npm install
