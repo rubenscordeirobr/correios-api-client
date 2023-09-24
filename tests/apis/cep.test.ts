@@ -23,6 +23,23 @@ describe("CEP Api", () => {
             logMessageResponse(endereco);
             assert.isTrue(endereco instanceof MessageResponse);
          });
+    });
+
+    describe("cep#searchMany", () => {
+
+        it("should return an array of Endereco", async () => {
+            const enderecos = await apiClient.Cep.searchMany(["85070555", "85070200"]);
+            logMessageResponse(enderecos);
+            assert.equal(enderecos.length, 2);
+            assert.equal(enderecos[0].bairro, "Santana");
+            assert.equal(enderecos[1].bairro, "Santana");
+        });
+
+        it("should return a MessageResponse", async () => {
+            const enderecos = await apiClient.Cep.searchMany(["85070-555", "85070-550"]);
+            logMessageResponse(enderecos);
+            assert.isTrue(enderecos instanceof MessageResponse);
+         });
 
     });
 
