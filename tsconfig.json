@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist",
+        "target": "es2016",
+        "module": "CommonJS",
+        "rootDir": "./",
+        "esModuleInterop": true,
+        // "moduleResolution": "Node",
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "sourceMap": true,
+        "declarationMap": true,
+        "allowJs": true,
+        "removeComments": true,
+        "strict": true,
+        "stripInternal": true,
+        "noImplicitAny": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck"  :true 
+    }
+}
