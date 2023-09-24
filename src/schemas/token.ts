@@ -1,8 +1,8 @@
-import { Ambientes, Apis, CartaoPostagem, Contrato } from "./";
+import { Ambientes, CorreiosAPIs, CartaoPostagem, Contrato } from "./";
 
 export class Token {
     readonly ambiente: Ambientes;
-    readonly api: Apis[];
+    readonly api: CorreiosAPIs[];
     readonly cartaoPostagem?: CartaoPostagem;
     readonly cie?: string;
     readonly cnpj?: string;
