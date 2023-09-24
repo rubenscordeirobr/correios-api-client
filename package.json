@@ -2,7 +2,7 @@
   "name": "correios-api-client",
   "version": "0.0.0",
   "description": "A lightweight client for interfacing with the Correios API. Facilitates seamless integration of Brazil's postal services into JavaScript applications, including features for tracking, delivery estimates, pricing, and address lookup (CEP).",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "build": "vite build",
     "build-dts": "vite build && dts-bundle-generator ./src/index.ts -o ./dist/index.d.ts",

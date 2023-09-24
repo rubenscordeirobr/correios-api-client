@@ -6,10 +6,10 @@ export default defineConfig({
         target: "es2022",
         lib: {
             entry: [
-                "src/main.ts"
+                "src/index.ts"
             ],
             name: "correios-api-client",
-            fileName: "main",
+            fileName: "index",
         },
         commonjsOptions: {
             ignore: [...builtinModules],
