@@ -1,11 +1,11 @@
 import { CorreiosAPIs } from "../schemas";
 import { Endereco } from "../schemas/endereco";
-import { BaseTokenClient } from "./token";
+import { BaseApiClient } from "./base";
 
 /**
  * Client for searching for addresses by CEP using the Correios API.
  */
-export class CepClient extends BaseTokenClient {
+export class CepApiClient extends BaseApiClient {
 
     protected override readonly CurrentApi: CorreiosAPIs = CorreiosAPIs.Cep;
     protected override readonly Endpoint = "/cep/v2/enderecos";

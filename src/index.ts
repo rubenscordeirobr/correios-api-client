@@ -1,26 +1,26 @@
 import config from "./config";
 import { Configuration } from "./schemas/";
-import { TokenClient } from "./apis/token";
-import { CepClient } from "./apis/cep";
+import { TokenApiClient } from "./apis/token";
+import { CepApiClient } from "./apis/cep";
 
 class ApiClient {
 
-    private _token: TokenClient;
-    private _cep: any;
+    private _token: TokenApiClient;
+    private _cep: CepApiClient;
 
-    get Token(): TokenClient {
+    get Token(): TokenApiClient {
         this.checkIsInitialized();
         return this._token;
     }
 
-    get Cep(): CepClient {
+    get Cep(): CepApiClient {
         this.checkIsInitialized();
         return this._cep;
     }
 
     constructor() {
-        this._token = new TokenClient();
-        this._cep = new CepClient();
+        this._token = new TokenApiClient();
+        this._cep = new CepApiClient();
     }
 
     initialize(init: Configuration) {
