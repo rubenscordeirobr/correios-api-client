@@ -1,11 +1,10 @@
-import config from "../config";
 import { CorreiosAPIs } from "../schemas";
 import { Endereco } from "../schemas/endereco";
 import { BaseTokenClient } from "./token";
 
-
-//API de busca CEP.
-
+/**
+ * Client for searching for addresses by CEP using the Correios API.
+ */
 export class CepClient extends BaseTokenClient {
 
     protected override readonly CurrentApi: CorreiosAPIs = CorreiosAPIs.Cep;
@@ -15,10 +14,20 @@ export class CepClient extends BaseTokenClient {
         super();
     }
 
+    /**
+     * Searches for an address by CEP.
+     * @param cep The CEP to search for.
+     * @returns A promise that resolves to the address associated with the given CEP.
+     */
     async search(cep: string): Promise<Endereco> {
         return this.get(`${this.Endpoint}/${cep}`);
     }
 
+    /**
+     * Searches for multiple addresses by CEP.
+     * @param ceps An array of CEPs to search for.
+     * @returns A promise that resolves to an array of addresses associated with the given CEPs.
+     */
     async searchMany(ceps: string[]): Promise<Endereco[]> {
         
         const query = ceps.map(cep => `cep=${cep}`).join("&");
