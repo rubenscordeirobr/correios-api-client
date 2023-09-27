@@ -1,5 +1,5 @@
 import config from "../config";
-import { HttpClient } from "../utils/http-client";
+import { HttpClient } from "../util/http-client";
 import { CorreiosAPIs, MessageResponse, Token } from "../schemas/";
 import { TokenEndpoint } from "./token";
 

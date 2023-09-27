@@ -1,4 +1,4 @@
-import { CorreiosAPIs } from "../schemas";
+import { CorreiosAPIs, MessageResponse } from "../schemas";
 import { Endereco } from "../schemas/endereco";
 import { BaseApiClient } from "./base";
 
@@ -19,8 +19,10 @@ export class CepApiClient extends BaseApiClient {
      * @param cep The CEP to search for.
      * @returns A promise that resolves to the address associated with the given CEP.
      */
-    async search(cep: string): Promise<Endereco> {
-        return this.get(`${this.Endpoint}/${cep}`);
+    async search(cep: string): Promise<Endereco | MessageResponse> {
+
+        const result = await this.get(`${this.Endpoint}/${cep}`);
+        return this.internalNormalizeResult(result);
     }
 
     /**
@@ -28,13 +30,37 @@ export class CepApiClient extends BaseApiClient {
      * @param ceps An array of CEPs to search for.
      * @returns A promise that resolves to an array of addresses associated with the given CEPs.
      */
-    async searchMany(ceps: string[]): Promise<Endereco[]> {
-        
+    async searchMany(ceps: string[]): Promise<(Endereco | MessageResponse)[] | MessageResponse> {
+
         const query = ceps.map(cep => `cep=${cep}`).join("&");
         const path = `${this.Endpoint}?${query}`;
         const result = await this.get(path);
-        if (result.itens?.length > 0)
-            return result.itens;
+
+        if (result instanceof MessageResponse)
+            return result;
+
+        const itens = result.itens;
+        if (Array.isArray(itens)) {
+            return itens.map(item => this.internalNormalizeResult(item));
+        }
         return result;
+    }
+
+    private internalNormalizeResult(result: any): Endereco | MessageResponse {
+
+        if (result instanceof MessageResponse)
+            return result;
+
+        if ((result as Endereco).logradouro != null)
+            return new Endereco(result as Endereco);
+
+        return new MessageResponse({
+            msgs: ["Result is invalid.", `Type of result: ${typeof result} `],
+            method: "GET",
+            path: `${this.Endpoint}`,
+            stackTrace: "",
+            date: new Date().toISOString(),
+            causa: ""
+        });
     }
 }
