@@ -10,19 +10,19 @@ describe("Prazo API", () => {
 
         it("should throw error Token is not defined", async () => {
             apiClient.initialize(FakeConfiguration);
-            await expect(apiClient.Prazo.nacional(ServicosCorreios.SedexSemContrato, "85070555", "85070200"))
+            await expect(apiClient.Prazo.nacional(ServicosCorreios.Sedex_SemContrato, "85070555", "85070200"))
                 .rejects
                 .toThrow('Token is not defined');
         });
 
 
         it("should return a MessageResponse", async () => {
-            const prazo = await apiClient.Prazo.nacional(ServicosCorreios.SedexSemContrato, "00070555", "85070200");
+            const prazo = await apiClient.Prazo.nacional(ServicosCorreios.Sedex_SemContrato, "00070555", "85070200");
             assert.isTrue(prazo instanceof MessageResponse);
         });
 
-        it("should return a Endereco", async () => {
-            const prazo = await apiClient.Prazo.nacional(ServicosCorreios.SedexSemContrato, "85070555", "85070200");
+        it("should return a Prazo", async () => {
+            const prazo = await apiClient.Prazo.nacional(ServicosCorreios.Sedex_SemContrato, "85070555", "85070200");
             assert.isTrue(prazo instanceof Prazo);
         });
 

@@ -25,6 +25,7 @@ export class PrazoApiClient extends BaseApiClient {
      * @returns A promise that resolves to an Endereco object containing the estimated delivery time.
      */
     async nacional(servico: ServicosCorreios, cepOrigem: string, cepDestino: string, dataEvento: Date = new Date()): Promise<Prazo | MessageResponse> {
+        
         const dataEventoFormata = DateUtil.format(dataEvento, "dd-MM-yyyy");
         const query = `cepOrigem=${cepOrigem}&cepDestino=${cepDestino}&dtEvento=${dataEventoFormata}`;
         const result = await this.get(`${this.Endpoint}/nacional/${servico}?${query}`);
