@@ -1,0 +1,42 @@
+@urlApi = api.correios.com.br 
+
+POST https://{{urlApi}}/token/v1/autentica
+Accept: application/json
+Authorization: Basic {{accessCode}}
+
+###
+curl -X 'POST' \
+  'https://api.correios.com.br/token/v1/autentica/contrato' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Basic {{accessCode}}' \
+  -d '{
+  "numero": "9912337526"
+}'
+
+
+###
+
+POST https://{{urlApi}}/token/v1/autentica/contrato HTTP/1.1
+Accept: application/json
+Authorization: Authorization: Basic {{accessCode}}
+Content-Type: application/json
+
+{
+  "numero": "9912337526"
+}
+
+
+###
+
+POST https://{{urlApi}}/token/v1/autentica/cartaopostagem HTTP/1.1
+Accept: application/json
+Authorization: Authorization: Basic {{accessCode}}
+Content-Type: application/json
+
+{
+  "numero": "0068060300"
+}
+
+###
+
