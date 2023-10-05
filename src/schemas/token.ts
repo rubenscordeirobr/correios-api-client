@@ -1,5 +1,8 @@
 import { Ambientes, CorreiosAPIs, CartaoPostagem, Contrato } from "./";
 
+/**
+ * Represents a token used for authentication with the Correios API.
+ */
 export class Token {
     readonly ambiente: Ambientes;
     readonly api: CorreiosAPIs[];

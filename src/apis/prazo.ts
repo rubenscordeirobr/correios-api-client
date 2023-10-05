@@ -4,8 +4,9 @@ import { ServicosCorreios } from "../schemas/servicos-correios";
 import { DateUtil } from "../util/date";
 import { BaseApiClient } from "./base";
 
+ 
 /**
- * Client for searching for addresses by CEP using the Correios API.
+ * A client for the Correios Prazo API.
  */
 export class PrazoApiClient extends BaseApiClient {
 

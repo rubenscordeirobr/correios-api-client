@@ -1,5 +1,8 @@
 import { ServicoAdicional } from "./servico-adicional";
 
+/**
+ * Represents a pricing object.
+ */
 export class Preco {
 
     readonly coProduto: string;
@@ -41,3 +44,11 @@ export class Preco {
     }
 }
 
+/**
+ * Represents an additional service that can be added to a Correios shipping service.
+ */
+export interface ServicoAdicional{
+    readonly coServAdicional: string;
+    readonly tpServAdicional: string;
+    readonly pcServicoAdicional: string;
+}

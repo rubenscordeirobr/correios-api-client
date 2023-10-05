@@ -7,8 +7,9 @@ import { DateUtil } from "../util/date";
 import { TextUtil } from "../util/text";
 import { BaseApiClient } from "./base";
 
+ 
 /**
- * Client for searching for addresses by CEP using the Correios API.
+ * A client for the Correios Preco API.
  */
 export class PrecoApiClient extends BaseApiClient {
 
@@ -19,6 +20,11 @@ export class PrecoApiClient extends BaseApiClient {
         super();
     }
 
+    /**
+     * Calculates the national shipping price based on the provided parameters.
+     * @param consulta - The object containing the parameters for the shipping calculation.
+     * @returns A Promise that resolves to a Preco object containing the calculated price, or a MessageResponse object if an error occurred.
+     */
     async nacional(consulta: ConsultaPreco): Promise<Preco | MessageResponse> {
 
         const cepOrigem = TextUtil.getOnlyNumbers(consulta.cepOrigem);

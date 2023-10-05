@@ -1,4 +1,7 @@
 
+/**
+ * Enum representing the available services provided by Correios, the Brazilian postal service.
+ */
 export enum ServicosCorreios {
     Aerograma = "85480",
     Carta_Registrada = "10014",

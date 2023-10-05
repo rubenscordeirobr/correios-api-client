@@ -1,4 +1,7 @@
 
+/**
+ * Represents a message response from the API.
+ */
 export class MessageResponse {
 
     readonly causa: string;

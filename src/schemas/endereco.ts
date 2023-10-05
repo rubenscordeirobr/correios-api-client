@@ -1,3 +1,6 @@
+/**
+ * Represents an address object with information such as zip code, state, city, street, and more.
+ */
 export class Endereco {
     
     readonly cep: string;
