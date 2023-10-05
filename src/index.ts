@@ -3,12 +3,16 @@ import { Configuration } from "./schemas/";
 import { TokenApiClient } from "./apis/token";
 import { CepApiClient } from "./apis/cep";
 import { PrazoApiClient } from "./apis/prazo";
+import { PrecoApiClient } from "./apis/preco";
+import { RastroApiClient } from "./apis/rastro";
 
 class ApiClient {
 
-    private _token: TokenApiClient;
-    private _cep: CepApiClient;
-    private _prazo: PrazoApiClient;
+    private readonly _token: TokenApiClient;
+    private readonly _cep: CepApiClient;
+    private readonly _prazo: PrazoApiClient;
+    private readonly _preco: PrecoApiClient;
+    private readonly _rastro: RastroApiClient;
 
     get Token(): TokenApiClient {
         this.checkIsInitialized();
@@ -25,10 +29,24 @@ class ApiClient {
         return this._prazo;
     }
 
+    get Preco(): PrecoApiClient {
+        this.checkIsInitialized();
+        return this._preco;
+    }
+
+    get Rastro(): RastroApiClient
+    {
+        this.checkIsInitialized();
+        return this._rastro;
+    }
+
+
     constructor() {
         this._token = new TokenApiClient();
         this._cep = new CepApiClient();
         this._prazo = new PrazoApiClient();
+        this._preco = new PrecoApiClient();
+        this._rastro = new RastroApiClient();
     }
 
     initialize(init: Configuration) {
