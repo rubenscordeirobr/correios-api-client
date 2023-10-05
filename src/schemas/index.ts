@@ -6,3 +6,4 @@ export * from './token';
 export * from './configuration';
 export * from './message-response';
 export * from "./endereco"
+export * from "./rastro"

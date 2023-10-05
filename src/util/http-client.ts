@@ -39,6 +39,7 @@ export class HttpClient {
             method: method,
             headers: {
                 "Accept": "application/json",
+                "Accept-Language": "pt-BR",
                 "Authorization": authorization,
             },
         }
