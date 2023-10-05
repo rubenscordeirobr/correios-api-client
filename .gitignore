@@ -1,6 +1,10 @@
 node_modules
 dist
-*.http
+configuration.json
+.vscode
+.vs
 *.js
 *.css
 *.map
+main.ts
+comments.txt
