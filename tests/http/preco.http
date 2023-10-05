@@ -1,0 +1,18 @@
+ @urlApi = api.correios.com.br
+POST https://{{urlApi}}/token/v1/autentica/contrato HTTP/1.1
+Accept: application/json
+Authorization: Basic {{accessCode}}
+Content-Type: application/json
+
+{
+  "numero": "9912337526"
+}
+ 
+###
+
+GET https://{{urlApi}}/preco/v1/nacional/03220?cepDestino=71930000&cepOrigem=70902000&psObjeto=300&tpObjeto=2&comprimento=20&largura=20&altura=20&servicosAdicionais=019&servicosAdicionais=001&vlDeclarado=200
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJSUzUxMiJ9.eyJhbWJpZW50ZSI6IlBST0RVQ0FPIiwiaWQiOiIxMzQ0MjcyNCIsInBmbCI6IlBKIiwiY25waiI6IjEwMzIyMzA0MDAwMTI5IiwiY29udHJhdG8iOnsibnVtZXJvIjoiOTkxMjMzNzUyNiIsImRyIjo3MiwiYXBpIjpbMjcsMzQsMzUsNDEsNzYsNzgsODcsNTY2LDU4N119LCJpYXQiOjE2OTYxMDk5MzQsImlzcyI6InRva2VuLXNlcnZpY2UiLCJleHAiOjE2OTYxOTYzMzQsImp0aSI6IjJlOGRjYWI2LWMwMWQtNGU5Ni04MzI3LWQxNzc5YjY5MGI4OCJ9.xiUm_K-23r6JQ2LLi8ndVXAAt6dKJUjjW4hQ-WFzhq7jD2J5RH58CPHcDIIPrUe35qA_L8iiUjsJhnYhTrzKuPh3RWdS2EBxTO285hRTLrkE812AdphLfDPwM8Db_bg4JcwLO1tEIozZbcvwFOHWGcgf8fPx2VjLUlQpF2OJigOl_Hj0c4XMAZCmY9LZtUXNBCx22eJLf9T-qB55eJ0bfDfPR8UkI2XvG7qN6xRDniXQl_wG_E_ACKkuPucWL8VGI7koYaU9qNR5Cc5nfiFLx7Mn4LCjKnQ6q1l8dw-DDidQSMCoZ0kbNyYsoJp7d8Rb3kWZ3vdNhtS_PD07sfwTKA
+
+###
+ 

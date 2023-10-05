@@ -1,0 +1,20 @@
+ @urlApi = api.correios.com.br
+ 
+POST https://{{urlApi}}/token/v1/autentica/contrato HTTP/1.1
+Accept: application/json
+Authorization: Basic {{accessCode}}
+Content-Type: application/json
+
+{
+  "numero": "9912337526"
+}
+
+ 
+###
+
+GET https://{{urlApi}}/prazo/v1/nacional/40096?cepOrigem=85070555&cepDestino=85070200&dtEvento=25-09-2023 HTTP/1.1
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJSUzUxMiJ9.eyJhbWJpZW50ZSI6IlBST0RVQ0FPIiwiaWQiOiIxMzQ0MjcyNCIsInBmbCI6IlBKIiwiY25waiI6IjEwMzIyMzA0MDAwMTI5IiwiY29udHJhdG8iOnsibnVtZXJvIjoiOTkxMjMzNzUyNiIsImRyIjo3MiwiYXBpIjpbMjcsMzQsMzUsNDEsNzYsODcsNTY2XX0sImlwIjoiNDUuMjI3LjE5NC4xNzksNDUuMjI3LjE5NC4xNzkiLCJpYXQiOjE2OTU1ODQ2MTIsImlzcyI6InRva2VuLXNlcnZpY2UiLCJleHAiOjE2OTU2NzEwMTIsImp0aSI6ImQyMWE4YThjLWVmNGEtNDM0Ny1iZGQ4LTZjZTc5MzY3YWEzNSJ9.SAQA87RtMn0fXZG1xABxfI35cNPz-yIRakvzJf3K4KmiOCDo1ExPA6dPks5c5EimvcGSQ4FbkUVc_2zoj1Rs5aA3CT2VUzQv190pkgXVtHQgynhizIelmQwYeE00r5u8ijyWEA_BZlXQrB0ba-_p4lFSHuyofUPUZN9IySfVVpNoYcX5V7Ja7GYUyDHDhpGb81y-Q6GWpgYUu8AoPzQ5UCopoOeB4pA3z5aRvbZMzvZY1Bkr7MMn2oyimzdyUAKmHo9HWMtGc9YobHHmDLjuUGJGwCrqXwJqWg04vzMmE-jMP7mblLFdtDw4WXoTiR1ITk4zrfaraxaaMTGvvpa1jw
+
+###
+ 

@@ -1,0 +1,19 @@
+@urlApi = api.correios.com.br
+
+POST https://{{urlApi}}/token/v1/autentica/contrato HTTP/1.1
+Accept: application/json
+Authorization: Basic {{accessCode}}
+Content-Type: application/json
+
+{
+  "numero": "9912337526"
+}
+
+###
+
+GET https://{{urlApi}}/srorastro/v1/objetos/LX697446262CN?resultado=T
+Accept: application/json
+Authorization: Bearer eyJhbGciOiJSUzUxMiJ9.eyJhbWJpZW50ZSI6IlBST0RVQ0FPIiwiaWQiOiIxMzQ0MjcyNCIsInBmbCI6IlBKIiwiY25waiI6IjEwMzIyMzA0MDAwMTI5IiwiY29udHJhdG8iOnsibnVtZXJvIjoiOTkxMjMzNzUyNiIsImRyIjo3MiwiYXBpIjpbMjcsMzQsMzUsNDEsNzYsNzgsODcsNTY2LDU4N119LCJpYXQiOjE2OTYxOTY0ODYsImlzcyI6InRva2VuLXNlcnZpY2UiLCJleHAiOjE2OTYyODI4ODYsImp0aSI6IjM2NGVkNzU0LWMxOGEtNGZjNi05N2U3LWMxYTQ1MTYzZjNiYyJ9.TVFGCo9GvkLrl_cjCzLZ6DQMUJvfKKKxeobkwyi_EyPQcq_jIzsV-ZEoxHQAIkQuy3H9HZdSppOgLV2NVn23mtoJcyARgsp4UC6GjO9xQRCZXJBFAqpcCJMrSP5MshMtuQkVj_Y8NQIR-dyXvGWNnHTEnl_frSuGvytANwseTMyzu-JdYW42f_74aXBVi6twHoRRO6xdXBG2N7xfG32xTeWyKtdk06e3L3QWt2lJ8-Z3AJrs8Hw3ftNZwWZn8E-m5a1kVnHNqyx1MeJu49aCscmAptsN1a5u03MouY_dy3snEPaOEjnVyc29Uv56bZcvCyenEI_LrKvuQRkSFPBWYg
+
+###
+ 
