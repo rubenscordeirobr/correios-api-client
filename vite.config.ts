@@ -1,22 +1,40 @@
 import { builtinModules } from "module";
 import { defineConfig } from "vitest/config";
 
+const config: any = {
+    lib: {
+        entry: [
+            "src/index.ts"
+        ],
+        fileName: "index.js",
+        name: "correios-api-client",
+    },
+    example: {
+        entry:[
+            "src/example/example.ts"
+        ],
+        fileName: "example.js",
+        name: "correios-api-client-example",
+    },
+};
+
+const currentConfig = process.env.LIB_NAME != null
+    ? config[process.env.LIB_NAME]
+    : config.lib;
+
+
 export default defineConfig({
     build: {
         target: "es2022",
         lib: {
-            entry: [
-                "src/index.ts"
-            ],
-            name: "correios-api-client",
-            fileName: "index",
+            ...currentConfig,
         },
         commonjsOptions: {
             ignore: [...builtinModules],
         },
         sourcemap: true,
         outDir: "dist",
-        emptyOutDir: true,
+        emptyOutDir: false,
         minify: false,
     },
     test: {
@@ -26,9 +44,13 @@ export default defineConfig({
         logHeapUsage: true,
     },
     resolve: {
-        alias: {
-             
-        }
+        alias: {}
     }
 });
+
+namespace NodeJS {
+    export interface ProcessEnv {
+        LIB_NAME?: string;
+    }
+}
 
