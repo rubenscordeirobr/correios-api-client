@@ -151,7 +151,3 @@ Pull requests and issues are welcome. If you encounter any bugs or want to sugge
 ## License
 
 This library is open-sourced and licensed under the [MIT License](LICENSE).
-
----
-
-I hope this README provides a clear overview of the `correios-api-client` package. Make sure to customize it as per your requirements and add more details where needed.
