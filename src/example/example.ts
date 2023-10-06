@@ -1,7 +1,5 @@
 import apiClient from "../";
-import { Configuration, MessageResponse } from "../schemas/";
-import { ConsultaPreco } from "../schemas/consulta-preco";
-import { ServicosCorreios } from "../schemas/servicos-correios";
+import { Configuration, ConsultaPreco, Endereco, Prazo, Preco, Rastro, ServicosCorreios,  MessageResponse } from "../schemas/";
 import { TiposObjeto } from "../schemas/tipos-objeto";
  
 const fs = require('fs');
