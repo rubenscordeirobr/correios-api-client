@@ -1,26 +1,51 @@
 {
   "name": "correios-api-client",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A lightweight client for interfacing with the Correios API. Facilitates seamless integration of Brazil's postal services into JavaScript applications, including features for tracking, delivery estimates, pricing, and address lookup (CEP).",
-  "main": "index.js",
-  "scripts": {
-    "build": "vite build",
-    "build-dts": "vite build && dts-bundle-generator ./src/index.ts -o ./dist/index.d.ts",
-    "test": "vitest"
+  "keywords": [
+    "correios",
+    "api",
+    "cep",
+    "rastreamento",
+    "preço",
+    "prazo",
+    "calulo preço",
+    "calculo"
+  ],
+  "homepage": "https://github.com/cordeiro-rubens/correios-api-client#readme",
+  "bugs": {
+    "url": "https://github.com/cordeiro-rubens/correios-api-client/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cordeiro-rubens/correios-api-client.git"
   },
-  "author": "Rubens Cordeiro",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cordeiro-rubens/correios-api-client/issues"
+  "author": "Rubens Cordeiro",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.umd.js",
+      "types": "./dist/index.d.ts"
+    }
   },
-  "homepage": "https://github.com/cordeiro-rubens/correios-api-client#readme",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:lib": "cross-env LIB_NAME=lib vite build",
+    "build:example": "cross-env LIB_NAME=example vite build",
+    "build": "npm run build:lib && npm run build:example",
+    "build-dts": "npm run build && dts-bundle-generator ./src/index.ts -o ./dist/index.d.ts",
+    "test": "vitest"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.7.2",
     "@typescript-eslint/parser": "^6.7.2",
+    "cross-env": "^7.0.3",
     "dts-bundle-generator": "^8.0.1",
     "eslint": "^8.50.0",
     "typescript": "^5.2.2",
