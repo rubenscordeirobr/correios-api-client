@@ -1,5 +1,3 @@
-import { ServicoAdicional } from "./servico-adicional";
-
 /**
  * Represents a pricing object.
  */
