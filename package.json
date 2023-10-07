@@ -1,6 +1,6 @@
 {
   "name": "correios-api-client",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "A lightweight client for interfacing with the Correios API. Facilitates seamless integration of Brazil's postal services into JavaScript applications, including features for tracking, delivery estimates, pricing, and address lookup (CEP).",
   "keywords": [
     "correios",
@@ -33,13 +33,16 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/index.d.ts",
+    "dist/index.mjs",
+    "dist/index.umd.js"
   ],
   "scripts": {
     "build:lib": "cross-env LIB_NAME=lib vite build",
     "build:example": "cross-env LIB_NAME=example vite build",
     "build": "npm run build:lib && npm run build:example",
     "build-dts": "npm run build && dts-bundle-generator ./src/index.ts -o ./dist/index.d.ts",
+    "publish": "npm run build-dts && npm publish",
     "test": "vitest"
   },
   "devDependencies": {

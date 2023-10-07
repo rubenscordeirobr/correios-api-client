@@ -6,14 +6,14 @@ const config: any = {
         entry: [
             "src/index.ts"
         ],
-        fileName: "index.js",
+        fileName: "index",
         name: "correios-api-client",
     },
     example: {
         entry:[
             "src/example/example.ts"
         ],
-        fileName: "example.js",
+        fileName: "example",
         name: "correios-api-client-example",
     },
 };
