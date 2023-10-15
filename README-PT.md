@@ -1,18 +1,16 @@
-[Em português](./README-PT.md)
-
 # correios-api-client
 
-A Node.js client for the Correios API, allowing for easy integration and management of various Correios services such as Token, Price, Deadline, CEP, and Tracking.
+Um cliente Node.js para a API dos Correios, que permite fácil integração e gerenciamento de vários serviços dos Correios, como Token, Preço, Prazo, CEP e Rastreamento.
 
-## Installation
+## Instalação
 
 ```bash
 npm install correios-api-client
 ```
 
-## Usage
+## Uso
 
-Firstly, you need to initialize the API client with your configuration.
+Primeiro, você precisa inicializar o cliente da API com sua configuração.
 
 ```javascript
 const apiClient = require('correios-api-client');
@@ -27,9 +25,9 @@ const configuration = {
 apiClient.initialize(configuration);
 ```
 
-### Authentication
+### Autenticação
 
-Authenticate with the Correios API to receive tokens.
+Autentique-se na API dos Correios para receber tokens.
 
 ```javascript
 const token = await apiClient.Token.autentica();
@@ -37,34 +35,34 @@ const tokenCartaoPostagem = await apiClient.Token.autenticaCartaoPostagem();
 const tokenContrato = await apiClient.Token.autenticaContrato();
 ```
 
-### CEP Lookup
+### Consulta de CEP
 
-Search for an address by CEP or retrieve multiple addresses.
+Pesquise um endereço por CEP ou recupere vários endereços.
 
 ```javascript
 const endereco = await apiClient.Cep.search("85070555");
 const enderecos = await apiClient.Cep.searchMany(["85070555", "85070200"]);
 ```
 
-### Delivery Timeframe
+### Prazo de Entrega
 
-Calculate the delivery timeframe for national packages.
+Calcule o prazo de entrega para encomendas nacionais.
 
 ```javascript
 const prazo = await apiClient.Prazo.nacional("04014", "85070555", "85070200");
 ```
 
-### Tracking
+### Rastreamento
 
-Track parcels using the tracking number.
+Rastreie pacotes usando o número de rastreamento.
 
 ```javascript
 const rastro = await apiClient.Rastro.search("LX697446262CN");
 ```
 
-### Price Estimation
+### Estimativa de Preço
 
-Get the estimated price for a package delivery.
+Obtenha o preço estimado para uma entrega de pacote.
 
 ```javascript
 const consultaPreco = {
@@ -85,20 +83,20 @@ const consultaPreco = {
 const preco = await apiClient.Preco.nacional(consultaPreco);
 ```
 
-## Schemas
+## Esquemas
 
-The library uses various interfaces and enums to represent data structures.
+A biblioteca utiliza várias interfaces e enums para representar estruturas de dados.
 
-### Token Interface
+### Interface Token
 
 ```typescript
 interface Token {
     readonly ambiente: "PRODUCAO" | "HOMOLOGACAO";
-    // ... other properties ...
+    // ... outras propriedades ...
 }
 ```
 
-### CorreiosAPIs Enum
+### Enum CorreiosAPIs
 
 ```typescript
 enum CorreiosAPIs {
@@ -110,46 +108,46 @@ enum CorreiosAPIs {
 }
 ```
 
-### Endereco Interface
+### Interface Endereco
 
 ```typescript
 interface Endereco {
     readonly cep: string;
-    // ... other properties ...
+    // ... outras propriedades ...
 }
 ```
 
-### Prazo Interface
+### Interface Prazo
 
 ```typescript
 interface Prazo {
     public readonly coProduto: string;
-    // ... other properties ...
+    // ... outras propriedades ...
 }
 ```
 
-### Rastro & Objeto Interfaces
+### Interfaces Rastro e Objeto
 
 ```typescript
 interface Rastro {
     readonly versao: string;
-    // ... other properties ...
+    // ... outras propriedades ...
 }
 
 interface Objeto {
     codObjeto: string;
-    // ... other properties ...
+    // ... outras propriedades ...
 }
 ```
 
-### And More...
+### E Muito Mais...
 
-For the complete list of interfaces and their properties, please refer to the source code.
+Para a lista completa de interfaces e suas propriedades, consulte o código-fonte.
 
-## Contributing
+## Contribuições
 
-Pull requests and issues are welcome. If you encounter any bugs or want to suggest enhancements, please create an issue.
+Pull requests e problemas são bem-vindos. Se você encontrar algum bug ou quiser sugerir melhorias, crie um problema.
 
-## License
+## Licença
 
-This library is open-sourced and licensed under the [MIT License](LICENSE).
+Esta biblioteca é de código aberto e licenciada sob a [Licença MIT](LICENSE).
